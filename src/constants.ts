@@ -5,7 +5,7 @@ export enum CASE {
   NEXT = 'next',
 }
 
-export const LOWERCASE_ARTICLES = ['the', 'a', 'an'];
+export const TITLECASE_EXCLUSIONS = ['the', 'a', 'an', 'and', 'or', 'nor', 'for', 'so', 'in', 'on', 'to', 'at', 'of', 'up', 'but', 'yet', 'by'];
 
 export enum SEARCH_DIRECTION {
   FORWARD = 'forward',

@@ -9,7 +9,7 @@ import {
 } from 'obsidian';
 import {
   SEARCH_DIRECTION,
-  LOWERCASE_ARTICLES,
+  TITLECASE_EXCLUSIONS,
   LIST_CHARACTER_REGEX,
 } from './constants';
 import { CustomSelectionHandler } from './custom-selection-handlers';
@@ -477,8 +477,8 @@ export const toTitleCase = (selectedText: string) => {
     .map((word, index, allWords) => {
       if (
         index > 0 &&
-        index < allWords.length - 1 &&
-        LOWERCASE_ARTICLES.includes(word.toLowerCase())
+        index < allWords.length - 1 &&  /* TODO: exclude math env. */
+        TITLECASE_EXCLUSIONS.includes(word.toLowerCase())
       ) {
         return word.toLowerCase();
       }
